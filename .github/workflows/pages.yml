@@ -1,0 +1,87 @@
+name: Deploy static content to Pages and Release PDF
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+permissions:
+  contents: write # Needed for creating a release
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate PDF
+        run: |
+          npm init -y
+          npm install puppeteer
+          cat << 'EOF' > generate-pdf.js
+          const puppeteer = require('puppeteer');
+          const path = require('path');
+
+          (async () => {
+            const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+            const page = await browser.newPage();
+            
+            // Set screen size for 16:9 landscape aspect ratio (typical for poster/slides)
+            await page.setViewport({width: 1920, height: 1080});
+            
+            const filePath = `file://${path.join(__dirname, 'index.html')}`;
+            // networkidle0 ensures fonts and external assets are fully loaded
+            await page.goto(filePath, { waitUntil: 'networkidle0' });
+            
+            await page.pdf({
+              path: 'poster.pdf',
+              width: '1920px',
+              height: '1080px',
+              printBackground: true,
+              pageRanges: '1'
+            });
+            await browser.close();
+          })();
+          EOF
+          node generate-pdf.js
+        
+      - name: Cleanup build files
+        run: rm -rf node_modules package.json package-lock.json generate-pdf.js
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository (excluding the newly created node_modules because it will be ignored by pages upload usually, but let's be clean)
+          path: '.'
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Release PDF
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "poster.pdf"
+          tag: "latest"
+          name: "Latest Poster PDF"
+          body: "Automatically generated PDF of the latest poster."
+          allowUpdates: true
+          makeLatest: true
