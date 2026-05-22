@@ -99,22 +99,68 @@
         }
 
         .author-info {
-            text-align: right;
-            font-size: var(--subtitle-size);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            width: fit-content;
+            margin-left: auto;
+            align-self: stretch;
+            font-size: clamp(1rem, 1.4vw, 1.6rem);
             font-weight: 500;
         }
 
-        .author-info a {
+        .author-copy {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.15rem;
+        }
+
+        .author-copy > div {
+            font-size: clamp(1.25rem, 1.8vw, 2rem);
+            font-weight: 700;
+            line-height: 1.05;
+        }
+
+        .author-copy a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: var(--small-size);
+            font-size: clamp(0.9rem, 1.1vw, 1.1rem);
             display: block;
-            margin-top: 0.2rem;
             transition: color 0.2s;
         }
         
-        .author-info a:hover {
+        .author-copy a:hover {
             color: var(--accent);
+        }
+
+        .author-qr {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            text-align: center;
+            flex: 0 0 auto;
+            align-self: stretch;
+        }
+
+        .author-qr img {
+            height: 100%;
+            width: auto;
+            display: block;
+            background: #fff;
+            padding: 0.2rem;
+            border: 1px solid var(--grid-line);
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+        }
+
+        .author-qr span {
+            font-size: var(--small-size);
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         /* --- Main Content Grid --- */
@@ -196,6 +242,104 @@
             overflow: hidden;
         }
 
+        .figure-pair {
+            flex-grow: 2;
+            background: transparent;
+            border: none;
+            padding: 0;
+            gap: 1rem;
+            align-items: stretch;
+            justify-content: stretch;
+        }
+
+        .figure-pair::after {
+            display: none;
+        }
+
+        .figure-pair figure {
+            flex: 1 1 0;
+            margin: 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--grid-line);
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 0;
+        }
+
+        .figure-pair img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            flex: 1 1 auto;
+        }
+
+        .figure-pair figcaption {
+            font-family: var(--font-display);
+            font-size: var(--small-size);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        .figure-transition {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3vw, 3rem);
+            line-height: 1;
+            padding: 0 0.25rem;
+            user-select: none;
+        }
+
+        .figure-transition svg {
+            width: clamp(2.5rem, 4vw, 4rem);
+            height: auto;
+            display: block;
+            fill: currentColor;
+            flex: 0 0 auto;
+        }
+
+        .research-card {
+            background: rgba(208, 242, 214, 0.88);
+            color: #12311d;
+            padding: 0.9rem 1rem;
+            border: 1px solid rgba(18, 49, 29, 0.12);
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            box-shadow: 0 10px 24px rgba(31, 122, 59, 0.14);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .research-card .card-label {
+            font-family: var(--font-display);
+            font-size: var(--small-size);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            opacity: 0.9;
+        }
+
+        .research-card h4 {
+            font-family: var(--font-display);
+            font-size: clamp(1rem, 1.4vw, 1.25rem);
+            line-height: 1.15;
+            text-transform: uppercase;
+        }
+
+        .research-card p {
+            color: rgba(18, 49, 29, 0.86);
+            font-size: clamp(0.72rem, 0.95vw, 0.92rem);
+            line-height: 1.45;
+        }
+
         .visual-placeholder::after {
             content: '';
             position: absolute;
@@ -270,6 +414,15 @@
             .col:last-child {
                 border-bottom: none;
             }
+
+            .figure-pair {
+                flex-direction: column;
+            }
+
+            .figure-transition {
+                transform: rotate(90deg);
+                padding: 0.25rem 0;
+            }
         }
     </style>
 </head>
@@ -284,8 +437,15 @@
                     <h1>Deployment Models for <span>Collective-Adaptive Systems</span></h1>
                 </div>
                 <div class="author-info">
-                    <div>Nicolas Farabegoli</div>
-                    <a href="https://dblp.org/pid/381/5304.html" target="_blank">dblp.org/pid/381/5304</a>
+                    <div class="author-copy">
+                        <div>Nicolas Farabegoli</div>
+                        <a href="https://dblp.org/pid/381/5304.html" target="_blank" rel="noreferrer">dblp.org/pid/381/5304</a>
+                        <a href="mailto:nicolas.farabegoli@unibo.it">nicolas.farabegoli@unibo.it</a>
+                    </div>
+                    <a class="author-qr" href="https://github.com/nicolasfara" target="_blank" rel="noreferrer" aria-label="GitHub profile for nicolasfara">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A%2F%2Fgithub.com%2Fnicolasfara" alt="QR code to GitHub profile for nicolasfara">
+                        <!-- <span>GitHub</span> -->
+                    </a>
                 </div>
             </header>
 
@@ -295,30 +455,56 @@
                 <!-- COLUMN 1: The Problem -->
                 <div class="col reveal delay-1">
                     <div class="section">
-                        <div class="section-number">01</div>
+                        <!-- <div class="section-number">01</div> -->
                         <h3>The Gap</h3>
-                        <p>Bridging the divide between conceptual simulations and physical realities in the Cloud-Edge continuum.</p>
+                        <p>Typical <strong>Collective-adaptive Systems</strong> (CAS) are deployed considering only physical devices, <u>without</u> leveraging any additional computational support.</p>
+                        <p>Modern infrastructures such as the <strong>Edge-cloud Continuum</strong> offer new opportunities to <i>CAS</i>, enabling dynamic and more sophisticated deployments</p>
                         <ul>
                             <li>Current methodologies struggle to map simulated swarm logic to heterogeneous, distributed hardware.</li>
                             <li>Lack of principled models for dynamic reconfiguration at runtime.</li>
                         </ul>
                     </div>
 
-                    <div class="visual-placeholder">
-                        [ Diagram: Simulation vs Reality Gap ]
+                    <div class="visual-placeholder figure-pair">
+                        <figure>
+                            <img src="images/ac-monolithic-motivation.svg" alt="System-partition figure">
+                            <figcaption>Device Only</figcaption>
+                        </figure>
+                        <div class="figure-transition" aria-hidden="true">
+                            <svg viewBox="0 0 64 24" role="presentation" focusable="false" aria-hidden="true">
+                                <path d="M0 9h44V0l20 12-20 12v-9H0z" />
+                            </svg>
+                        </div>
+                        <figure>
+                            <img src="images/edge-cloud-continuum.svg" alt="System-partition figure">
+                            <figcaption>Edge-Cloud Continuum</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="research-card">
+                        <!-- <div class="card-label">Research claim</div> -->
+                        <h4>Exploit the ECC for better CAS deployments</h4>
+                        <p><strong>Research question:</strong> How can we map collective-adaptive behavior to heterogeneous continuum resources without losing runtime adaptability?</p>
                     </div>
                 </div>
 
                 <!-- COLUMN 2: The Model (Centerpiece) -->
                 <div class="col reveal delay-2">
                     <div class="section">
-                        <div class="section-number">02</div>
+                        <!-- <div class="section-number">02</div> -->
                         <h3>The Pulverisation Model</h3>
                         <p>A declarative approach to breaking down monolithic systems into computationally independent micro-components (behaviour, state, communication, sensors/actuators).</p>
                     </div>
 
-                    <div class="visual-placeholder" style="flex-grow: 2;">
-                        [ Core Diagram: Pulverisation Architecture / Macro-programming IoT ]
+                    <div class="visual-placeholder figure-pair">
+                        <figure>
+                            <img src="images/collective-local-components.svg" alt="Collective local component figure">
+                            <figcaption>Collective local component</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="images/system-model.svg" alt="System-partition figure">
+                            <figcaption>System-partition</figcaption>
+                        </figure>
                     </div>
 
                     <div class="section">
@@ -329,7 +515,7 @@
                 <!-- COLUMN 3: Outcomes & Realities -->
                 <div class="col reveal delay-3">
                     <div class="section">
-                        <div class="section-number">03</div>
+                        <!-- <div class="section-number">03</div> -->
                         <h3>Runtime Self-Organisation</h3>
                         <p>Global-level self-organisation approaches yielding resilient, scalable fleets.</p>
                         <ul>
