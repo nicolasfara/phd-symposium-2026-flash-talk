@@ -178,6 +178,7 @@
 				gap: var(--content-gap);
 				border-right: 1px solid var(--grid-line);
 				padding-right: var(--content-gap);
+				min-height: 0;
 				position: relative;
 			}
 			
@@ -254,6 +255,55 @@
 			
 			.figure-pair::after {
 				display: none;
+			}
+			
+			.model-split {
+				display: grid;
+				grid-template-columns: 2fr 1fr;
+				gap: var(--content-gap);
+				align-items: stretch;
+				min-height: 0;
+			}
+			
+			.model-split .visual-placeholder.figure-pair.single-figure {
+				min-height: clamp(12rem, 28vh, 18rem);
+			}
+			
+			.model-split .model-copy {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				gap: 0.5rem;
+				padding: 0;
+				background: transparent;
+				border: none;
+				border-radius: 0;
+				box-shadow: none;
+				min-height: 0;
+			}
+			
+			.model-split .model-copy p {
+				margin: 0;
+			}
+			
+			.poster-content > .col:nth-child(2) .visual-placeholder.figure-pair {
+				flex: 1 1 auto;
+				min-height: clamp(12rem, 24vh, 18rem);
+			}
+			
+			.poster-content > .col:nth-child(2) .visual-placeholder.figure-pair figure {
+				height: 100%;
+				min-height: 0;
+				display: grid;
+				grid-template-rows: minmax(0, 1fr) auto;
+			}
+			
+			.poster-content > .col:nth-child(2) .visual-placeholder.figure-pair img {
+				width: 100%;
+				height: 100%;
+				max-height: 100%;
+				min-height: 0;
+				object-fit: contain;
 			}
 			
 			.figure-pair figure {
@@ -457,6 +507,10 @@
 					transform: rotate(90deg);
 					padding: 0.25rem 0;
 				}
+				
+				.model-split {
+					grid-template-columns: 1fr;
+				}
 			}
 		</style>
 	</head>
@@ -535,7 +589,10 @@
 						<div class="section">
 							<!-- <div class="section-number">02</div> -->
 							<h3>The Pulverisation Model</h3>
-							<p>A declarative approach to breaking down monolithic systems into computationally independent micro-components (behaviour, state, communication, sensors/actuators).</p>
+							<p>A declarative approach to <u>breaking down monolithic systems</u>
+								into <strong>computationally independent components</strong>.
+								Components are distinguished between <i>local</i>
+								and <i>collective</i>.</p>
 						</div>
 
 						<div class="visual-placeholder figure-pair">
@@ -544,14 +601,27 @@
 								<figcaption>Collective local component</figcaption>
 							</figure>
 							<figure>
-								<img src="images/system-model.svg" alt="System-partition figure">
+								<img src="images/offloading-surrogate.svg" alt="System-partition figure">
 								<figcaption>System-partition</figcaption>
 							</figure>
 						</div>
 
 						<div class="section">
-							<p>Enabling <strong>declarative deployment planning</strong>
-								for green, dynamic execution across edge, fog, and cloud tiers.</p>
+							<p>Porco</p>
+						</div>
+
+						<div class="model-split">
+							<div class="visual-placeholder figure-pair single-figure">
+								<figure>
+									<img src="images/system-model.svg" alt="System-partition figure">
+									<figcaption>System-partition</figcaption>
+								</figure>
+							</div>
+
+							<div class="model-copy">
+								<p>Enabling <strong>declarative deployment planning</strong>
+									for green, dynamic execution across edge, fog, and cloud tiers.</p>
+							</div>
 						</div>
 					</div>
 
