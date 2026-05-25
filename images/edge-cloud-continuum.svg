@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    xml:space="preserve"
-   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    sodipodi:docname="edge-cloud-continuum.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -25,10 +25,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="10.058306"
-     inkscape:cx="62.038279"
-     inkscape:cy="61.143497"
-     inkscape:window-width="3440"
-     inkscape:window-height="1358"
+     inkscape:cx="2.3860877"
+     inkscape:cy="18.989281"
+     inkscape:window-width="2259"
+     inkscape:window-height="1193"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -963,7 +963,7 @@
        transform="rotate(-90)"><tspan
          sodipodi:role="line"
          id="tspan1"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.2"
          x="-151.38594"
          y="90.7211">Cloud</tspan></text><text
        xml:space="preserve"
@@ -974,7 +974,7 @@
        transform="rotate(-90)"><tspan
          sodipodi:role="line"
          id="tspan2"
-         style="stroke-width:0.2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans';stroke-width:0.2"
          x="-161.19327"
          y="90.526367">Fog</tspan></text><text
        xml:space="preserve"
@@ -985,7 +985,7 @@
        transform="rotate(-90)"><tspan
          sodipodi:role="line"
          id="tspan3"
-         style="stroke-width:0.2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans';stroke-width:0.2"
          x="-170.66638"
          y="90.533424">Gateway</tspan></text><text
        xml:space="preserve"

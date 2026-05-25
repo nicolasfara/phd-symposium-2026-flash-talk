@@ -7,7 +7,7 @@
    viewBox="0 0 508.72646 301.52479"
    version="1.1"
    id="svg1"
-   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    sodipodi:docname="system-model.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,10 +24,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.1369402"
-     inkscape:cx="302.56648"
-     inkscape:cy="538.72666"
-     inkscape:window-width="3840"
-     inkscape:window-height="2045"
+     inkscape:cx="1569.1239"
+     inkscape:cy="539.16644"
+     inkscape:window-width="2259"
+     inkscape:window-height="1193"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -646,7 +646,7 @@
          id="text63-3"><tspan
            sodipodi:role="line"
            id="tspan63-3"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#23373b;fill-opacity:1;stroke:none;stroke-width:0.61159"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#23373b;fill-opacity:1;stroke:none;stroke-width:0.61159"
            x="357.30954"
            y="37.955135">Application device</tspan></text>
       <text
@@ -657,7 +657,7 @@
          id="text63-3-60"><tspan
            sodipodi:role="line"
            id="tspan63-3-5"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#23373b;fill-opacity:1;stroke:none;stroke-width:0.61159"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#23373b;fill-opacity:1;stroke:none;stroke-width:0.61159"
            x="355.16956"
            y="-4.9531865">Macroprogram</tspan></text>
       <circle
