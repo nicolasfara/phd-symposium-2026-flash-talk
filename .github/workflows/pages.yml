@@ -29,13 +29,16 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Fira Sans
+      - name: Install Fira Sans and Fira Mono
         run: |
           set -euo pipefail
           font_dir="$HOME/.local/share/fonts/fira-sans"
           mkdir -p "$font_dir"
           for font_file in FiraSans-Regular.ttf FiraSans-Italic.ttf FiraSans-Medium.ttf FiraSans-Bold.ttf FiraSans-BoldItalic.ttf; do
             curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/firasans/$font_file" -o "$font_dir/$font_file"
+          done
+          for font_file in FiraMono-Regular.ttf FiraMono-Medium.ttf FiraMono-Bold.ttf; do
+            curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/firamono/$font_file" -o "$font_dir/$font_file"
           done
           fc-cache -f -v "$HOME/.local/share/fonts"
 
