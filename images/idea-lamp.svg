@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   fill="#000000"
+   width="800px"
+   height="800px"
+   viewBox="0 0 24 24"
+   id="idea-lamp"
+   data-name="Line Color"
+   class="icon line-color"
+   version="1.1"
+   sodipodi:docname="idea-lamp-svgrepo-com.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.215"
+     inkscape:cx="400.41152"
+     inkscape:cy="400"
+     inkscape:window-width="2259"
+     inkscape:window-height="1193"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="idea-lamp" />
+  <path
+     id="primary"
+     d="M16.19,13.29A4,4,0,0,0,15,16.12V19a1,1,0,0,1-1,1H10a1,1,0,0,1-1-1V16.13a4.13,4.13,0,0,0-1.26-2.91,6,6,0,1,1,8.45.07Z"
+     style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;" />
+  <path
+     id="secondary"
+     d="M15,16a.49.49,0,0,0,0,.12V19a1,1,0,0,1-1,1H10a1,1,0,0,1-1-1V16.13A.57.57,0,0,0,9,16Zm-2,5H11V20h2Z"
+     style="fill:none;stroke:#eb811b;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-opacity:1" />
+</svg>

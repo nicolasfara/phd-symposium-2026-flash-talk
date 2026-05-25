@@ -261,6 +261,7 @@
 				margin: 0;
 				background: var(--bg-secondary);
 				border: 1px solid var(--grid-line);
+				border-radius: 0.35rem;
 				padding: 0.75rem;
 				display: flex;
 				flex-direction: column;
@@ -302,7 +303,11 @@
 				width: clamp(2.5rem, 4vw, 4rem);
 				height: auto;
 				display: block;
-				fill: currentColor;
+				fill: none;
+				stroke: currentColor;
+				stroke-width: 3;
+				stroke-linecap: round;
+				stroke-linejoin: round;
 				flex: 0 0 auto;
 			}
 			
@@ -312,11 +317,39 @@
 				padding: 0.9rem 1rem;
 				border: 1px solid rgba(18, 49, 29, 0.12);
 				display: flex;
-				flex-direction: column;
-				gap: 0.35rem;
+				flex-direction: row;
+				align-items: center;
+				gap: 0.9rem;
 				box-shadow: 0 10px 24px rgba(31, 122, 59, 0.14);
 				backdrop-filter: blur(6px);
 				-webkit-backdrop-filter: blur(6px);
+			}
+			
+			.research-card-icon {
+				flex: 0 0 auto;
+				width: clamp(2rem, 2.8vw, 2.6rem);
+				height: clamp(2rem, 2.8vw, 2.6rem);
+				border-radius: 50%;
+				background: rgba(255, 255, 255, 0.4);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #12311d;
+				overflow: hidden;
+			}
+			
+			.research-card-icon img {
+				width: 78%;
+				height: 78%;
+				display: block;
+				object-fit: contain;
+			}
+			
+			.research-card-icon svg {
+				width: 62%;
+				height: 62%;
+				display: block;
+				fill: currentColor;
 			}
 			
 			.research-card .card-label {
@@ -336,8 +369,9 @@
 			
 			.research-card p {
 				color: rgba(18, 49, 29, 0.86);
-				font-size: clamp(0.72rem, 0.95vw, 0.92rem);
+				font-size: clamp(0.92rem, 1.15vw, 1.15rem);
 				line-height: 1.45;
+				margin: 0;
 			}
 			
 			.visual-placeholder::after {
@@ -457,14 +491,15 @@
 						<div class="section">
 							<!-- <div class="section-number">01</div> -->
 							<h3>The Gap</h3>
-							<p>Typical <strong>Collective-adaptive Systems</strong>
-								(CAS) are deployed considering only physical devices, <u>without</u>
-								leveraging any additional computational support.</p>
-							<p>Modern infrastructures such as the <strong>Edge-cloud Continuum</strong>
-								offer new opportunities to <i>CAS</i>, enabling dynamic and more sophisticated deployments</p>
+							<p>Typical <strong>collective-adaptive systems</strong>
+								(CAS) are deployed as if only physical devices mattered,
+								leaving the rest of the infrastructure unused.</p>
+							<p>The <strong>edge-cloud continuum</strong>
+								opens new deployment opportunities for <i>CAS</i>, enabling more dynamic
+								and sophisticated setups.</p>
 							<ul>
-								<li>Current methodologies struggle to map simulated swarm logic to heterogeneous, distributed hardware.</li>
-								<li>Lack of principled models for dynamic reconfiguration at runtime.</li>
+								<li>Current methods struggle to map swarm logic onto heterogeneous, distributed hardware.</li>
+								<li>Runtime reconfiguration still lacks principled models.</li>
 							</ul>
 						</div>
 
@@ -475,7 +510,7 @@
 							</figure>
 							<div class="figure-transition" aria-hidden="true">
 								<svg viewBox="0 0 64 24" role="presentation" focusable="false" aria-hidden="true">
-									<path d="M0 9h44V0l20 12-20 12v-9H0z"/>
+									<path d="M6 12h38m0 0-8-7m8 7-8 7"/>
 								</svg>
 							</div>
 							<figure>
@@ -485,10 +520,13 @@
 						</div>
 
 						<div class="research-card">
-							<!-- <div class="card-label">Research claim</div> -->
-							<h4>Exploit the ECC for better CAS deployments</h4>
-							<p><strong>Research question:</strong>
-							How can we map collective-adaptive behavior to heterogeneous continuum resources without losing runtime adaptability?</p>
+							<div class="research-card-icon" aria-hidden="true">
+								<img src="images/idea-lamp.svg" alt="Idea lamp">
+							</div>
+							<p>How can we <strong>exploit</strong>
+								the rest of the infrastructure of the continuum for <strong>efficient</strong>
+								and <strong>smarter deployments</strong>
+								?</p>
 						</div>
 					</div>
 
