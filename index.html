@@ -458,37 +458,37 @@
 									(CAS) are deployed as if only physical devices mattered,
 									leaving the rest of the infrastructure unused.</p>
 								<p>The <strong>edge-cloud continuum</strong>
-									opens new deployment opportunities for <i>CAS</i>, enabling more dynamic
-									and sophisticated setups.</p>
+									opens new deployment opportunities for CAS, enabling more dynamic
+									and sophisticated deployments.</p>
 								<ul>
 									<li>Current methods struggle to map swarm logic onto heterogeneous, distributed hardware.</li>
-									<li>Runtime reconfiguration still lacks principled models.</li>
+									<li>Runtime reconfiguration lacks principled, function-preserving models.</li>
 								</ul>
 							</div>
 
-								<div class="figure-group">
-									<figure>
-										<img src="images/ac-monolithic-motivation.svg" alt="System-partition figure">
-										<figcaption>Device Only</figcaption>
-									</figure>
-									<div class="figure-transition" aria-hidden="true">
-										<svg viewBox="0 0 36 24" role="presentation" focusable="false" aria-hidden="true">
-											<path d="M3 12h24m0 0-7-6m7 6-7 6"/>
-										</svg>
-									</div>
-									<figure>
-										<img src="images/edge-cloud-continuum.svg" alt="System-partition figure">
-										<figcaption>Edge-Cloud Continuum</figcaption>
-									</figure>
+							<div class="figure-group">
+								<figure>
+									<img src="images/ac-monolithic-motivation.svg" alt="System-partition figure">
+									<figcaption>Device-only</figcaption>
+								</figure>
+								<div class="figure-transition" aria-hidden="true">
+									<svg viewBox="0 0 36 24" role="presentation" focusable="false" aria-hidden="true">
+										<path d="M3 12h24m0 0-7-6m7 6-7 6"/>
+									</svg>
 								</div>
+								<figure>
+									<img src="images/edge-cloud-continuum.svg" alt="System-partition figure">
+									<figcaption>Edge-cloud continuum</figcaption>
+								</figure>
+							</div>
 
-								<div class="research-card">
-									<div class="research-card-icon" aria-hidden="true">
-										<img src="images/idea-lamp.svg" alt="Idea lamp">
-									</div>
-									<p>How can we <strong>exploit</strong>
-									the rest of the infrastructure of the continuum for <strong>efficient</strong>
-									and <strong>smarter deployments</strong>?</p>
+							<div class="research-card">
+								<div class="research-card-icon" aria-hidden="true">
+									<img src="images/idea-lamp.svg" alt="Idea lamp">
+								</div>
+								<p>How can we <strong>exploit</strong>
+									the continuum infrastructure for <strong>efficient</strong>
+									and <strong>adaptive deployments</strong>?</p>
 							</div>
 						</div>
 
@@ -512,11 +512,11 @@
 							</div>
 
 							<div class="section">
-								<p>This model exploits <i>surrogates</i>
-									i.e., infrastructural devices to offload components, preserving the
+								<p>This model exploits <i>surrogates</i>,
+									i.e., infrastructural devices used to offload components, preserving the
 									<strong>functional equivalence</strong>
-									of the system and improving
-									<strong>non-functional requirements</strong>.</p>
+									of the system while improving
+									<strong>non-functional properties</strong>.</p>
 							</div>
 
 							<div class="highlight-split">
@@ -529,8 +529,8 @@
 
 								<div class="highlight-card">
 									<p>Offloading <strong>computationally heavy</strong>
-										components improves devices' <strong>power consumption</strong>
-										getting <span class="text-badge">greener deployments</span>
+										components reduces <strong>device power consumption</strong>,
+										leading to <span class="text-badge">greener deployments</span>
 										and enabling complex deployments that would otherwise be <span class="text-badge">impossible</span>
 										with only thin edge devices.</p>
 								</div>
@@ -541,10 +541,18 @@
 						<div class="column reveal delay-3">
 							<div class="section">
 								<h3>Real-world Self-Organisation</h3>
-								<p>Global-level self-organisation approaches yielding resilient, scalable fleets.</p>
+								<p>The model is evaluated in a swarm-robotic demonstrator, where an <u>edge server</u>
+									is used to <strong>offload</strong>
+									the collective behaviour of the system.</p>
 								<ul>
-									<li>Proximity-aware clustering for Self-Federated Learning.</li>
-									<li>HarmoniKt: Unifying middleware for heterogeneous robot fleets.</li>
+									<li>The approach moves from <strong>simulated collective behaviour</strong>
+										to
+										<strong>deployable systems</strong>
+										aware of the <i>surrounding infrastructure</i>.</li>
+									<li>It exploits <strong>edge-cloud execution</strong>
+										to coordinate robots and surrogates,
+										enabling <i>scalable deployments</i>
+										beyond robot-only fleets.</li>
 								</ul>
 							</div>
 
@@ -570,7 +578,7 @@
 
 							<div class="summary-box reveal delay-4">
 								<h3>Impact</h3>
-								<p>Bridge the gap between <strong>simulation</strong>
+								<p>This bridges the gap between <strong>simulation</strong>
 									and <strong>real-world</strong>
 									deployments with a formally validated, function-preserving deployment model.</p>
 							</div>
