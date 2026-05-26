@@ -71,7 +71,7 @@
 				grid-template-rows: auto 1fr auto; /* Header, Content, Footer */
 				width: 100%;
 				height: 100%;
-				padding: var(--slide-padding);
+				padding: var(--slide-padding) var(--slide-padding) calc(var(--slide-padding) + 0.75rem);
 				gap: var(--content-gap);
 			}
 			
@@ -614,8 +614,8 @@
 							<h3>The Pulverisation Model</h3>
 							<p>A declarative approach to <u>breaking down monolithic systems</u>
 								into <strong>computationally independent components</strong>.
-								Components are distinguished between <i>local</i>
-								and <i>collective</i>.</p>
+								<!-- Components are distinguished between <i>local</i>
+								and <i>collective</i>. --></p>
 						</div>
 
 						<div class="visual-placeholder figure-pair">
