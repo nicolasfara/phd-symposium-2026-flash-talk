@@ -32,7 +32,7 @@
 				--grid-line: #e0e0e0;
 				
 				/* Border / Safe Area Margin */
-				--poster-border: 1.5cqi;
+				--poster-border: 0.8cqi;
 				
 				/* Typography (Container Query Units) */
 				--font-display: 'Archivo', sans-serif;
@@ -284,11 +284,11 @@
 				width: 100%;
 				height: 100%;
 				overflow: hidden;
-				font-size: clamp(0.5rem, 0.67cqi, 0.72rem);
-				line-height: 1.45;
+				font-size: clamp(0.45rem, 0.58cqi, 0.64rem);
+				line-height: 1.32;
 				font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 				margin: 0;
-				padding: 0.55rem 0.65rem;
+				padding: 0.42rem 0.5rem;
 				border-radius: inherit;
 			}
 			
@@ -458,6 +458,11 @@
 				.slide-wrapper { max-width: none; max-height: none; width: 100vw; height: 100vh; }
 				.slide { box-shadow: none; }
 				.reveal { opacity: 1 !important; transform: none !important; animation: none !important; }
+				.code-figure pre[class*="language-"] {
+					font-size: 6.5pt;
+					line-height: 1.2;
+					padding: 0.35rem 0.45rem;
+				}
 			}
 			
 			/* Container Queries */
