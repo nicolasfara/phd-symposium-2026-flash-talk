@@ -7,6 +7,16 @@
 
 		<!-- Fonts: Archivo for bold display, Satoshi for clean body text -->
 		<link href="https://api.fontshare.com/v2/css?f[]=archivo@800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css" rel="stylesheet">
+		<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-clike.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-scala.min.js"></script>
+		<script defer>
+			window.addEventListener('DOMContentLoaded', () => {
+				if (window.Prism) window.Prism.highlightAll();
+				});
+		</script>
 
 		<style>
 			/* ===========================================
@@ -203,6 +213,9 @@
 				font-size: var(--body-size);
 				line-height: 1.5;
 				color: var(--text-secondary);
+				max-width: 100%;
+				overflow-wrap: break-word;
+				hyphens: auto;
 			}
 			
 			ul {
@@ -262,6 +275,39 @@
 				text-align: center;
 			}
 			
+			.code-figure {
+				border-color: var(--grid-line);
+				color: var(--text-primary);
+			}
+			
+			.code-figure pre[class*="language-"] {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				font-size: clamp(0.5rem, 0.67cqi, 0.72rem);
+				line-height: 1.45;
+				font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+				margin: 0;
+				padding: 0.55rem 0.65rem;
+				border-radius: inherit;
+			}
+			
+			.code-figure code[class*="language-"] {
+				display: block;
+				width: 100%;
+				white-space: pre;
+				font-family: inherit;
+			}
+			
+			.code-figure .token.operator,
+			.code-figure .token.punctuation {
+				background: transparent;
+			}
+			
+			.code-figure figcaption {
+				color: var(--text-secondary);
+			}
+			
 			.figure-transition {
 				flex: 0 0 auto;
 				display: flex;
@@ -286,29 +332,34 @@
 				align-items: stretch;
 				flex: 1 1 auto;
 				min-height: 0;
+				min-width: 0;
 			}
 			
 			.highlight-card {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				padding: 0.85rem 0.95rem;
+				padding: clamp(0.5rem, 0.85cqi, 0.85rem) clamp(0.55rem, 0.95cqi, 0.95rem);
 				background: linear-gradient(180deg, rgba(235, 129, 27, 0.08) 0%, rgba(244, 244, 244, 0.95) 100%);
 				border: 1px solid rgba(235, 129, 27, 0.18);
 				border-radius: 0.5rem;
 				box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
 				min-height: 0;
+				min-width: 0;
+				overflow: hidden;
 			}
 			
 			.highlight-card p {
 				margin: 0;
-				padding-left: 0.8rem;
+				padding-left: clamp(0.45rem, 0.8cqi, 0.8rem);
 				border-left: 3px solid var(--accent);
-				font-size: clamp(0.78rem, 0.95cqi, 0.95rem);
-				line-height: 1.55;
+				font-size: clamp(0.62rem, 0.88cqi, 0.95rem);
+				line-height: 1.42;
 				color: var(--text-primary);
 				font-weight: 500;
 				text-wrap: pretty;
+				min-width: 0;
+				overflow-wrap: anywhere;
 			}
 			
 			.text-badge {
@@ -318,6 +369,7 @@
 				border-radius: 0.2em;
 				box-decoration-break: clone;
 				-webkit-box-decoration-break: clone;
+				overflow-wrap: anywhere;
 			}
 			
 			/* --- Custom Cards --- */
@@ -372,6 +424,8 @@
 			
 			.summary-box p {
 				color: #ccc;
+				font-size: clamp(0.72rem, 0.95cqi, 0.95rem);
+				line-height: 1.35;
 				padding-top: 0.65rem;
 			}
 			
@@ -407,6 +461,25 @@
 			}
 			
 			/* Container Queries */
+			@container poster (max-width: 1400px) {
+				.highlight-card {
+					padding: clamp(0.35rem, 0.6cqh, 0.65rem) clamp(0.4rem, 0.75cqi, 0.75rem);
+				}
+				
+				.highlight-card p {
+					padding-left: clamp(0.3rem, 0.55cqi, 0.55rem);
+					font-size: clamp(0.34rem, 1.05cqh, 0.75rem);
+					line-height: 1.22;
+				}
+			}
+			
+			@container poster (max-width: 1100px) {
+				.highlight-card p {
+					font-size: clamp(0.28rem, 1cqh, 0.62rem);
+					line-height: 1.15;
+				}
+			}
+			
 			@container poster (max-width: 900px) {
 				.poster-content {
 					grid-template-columns: 1fr;
@@ -421,7 +494,14 @@
 				.column:last-child { border-bottom: none; }
 				.figure-group { flex-direction: column; }
 				.figure-transition { transform: rotate(90deg); padding: 0.25rem 0; }
-				.highlight-split { grid-template-columns: 1fr; }
+				.highlight-split {
+					grid-template-columns: 1fr;
+					flex: 0 0 auto;
+				}
+				.highlight-card p {
+					font-size: clamp(0.56rem, 1.6cqi, 0.8rem);
+					line-height: 1.32;
+				}
 			}
 		</style>
 	</head>
@@ -438,7 +518,7 @@
 						<div class="author-info">
 							<div class="author-copy">
 								<div>Nicolas Farabegoli</div>
-								<a href="https://dblp.org/pid/381/5304.html" target="_blank" rel="noreferrer">dblp.org/pid/381/5304</a>
+								<a href="https://orcid.org/0000-0002-7321-358X" target="_blank" rel="noreferrer">0000-0002-7321-358X</a>
 								<a href="mailto:nicolas.farabegoli@unibo.it">nicolas.farabegoli@unibo.it</a>
 							</div>
 							<a class="author-qr" href="https://github.com/nicolasfara" target="_blank" rel="noreferrer" aria-label="GitHub profile for nicolasfara">
@@ -495,19 +575,34 @@
 						<!-- COLUMN 2: The Model (Centerpiece) -->
 						<div class="column reveal delay-2">
 							<div class="section">
-								<h3>The Pulverisation Model</h3>
+								<h3>Models and Languages</h3>
 								<p>A declarative approach to <u>breaking down monolithic systems</u>
-									into <strong>computationally independent components</strong>.</p>
+									into <strong>computationally independent components</strong>. A <strong>strongly typed</strong>
+									language for <u>safe</u>
+									distributed systems.</p>
 							</div>
 
 							<div class="figure-group">
 								<figure>
-									<img src="images/collective-local-components.svg" alt="Collective local component figure">
-									<figcaption>Collective local component</figcaption>
-								</figure>
-								<figure>
 									<img src="images/offloading-surrogate.svg" alt="System-partition figure">
-									<figcaption>System-partition</figcaption>
+									<figcaption>System Model</figcaption>
+								</figure>
+								<figure class="code-figure">
+									<pre class="language-scala"><code class="language-scala">def coll(using Placement, Collective) =
+  Collective[Smartphone](1.second):
+    nbr(1).sum
+
+def analysis(
+  values: Signal[Int] on Cloud
+)(using Placement, Multitier) = on[Cloud]:
+  take(values).subscribe: it =>
+    analyze(it)
+
+val nbrValues = coll
+on[Cloud]:
+  val valuesOnCloud = asLocal(nbrValues)
+  analysis(valuesOnCloud)</code></pre>
+									<figcaption>Capabilities Placement Types</figcaption>
 								</figure>
 							</div>
 
@@ -522,8 +617,8 @@
 							<div class="highlight-split">
 								<div class="figure-group">
 									<figure>
-										<img src="images/system-model.svg" alt="System-partition figure">
-										<figcaption>System-partition</figcaption>
+										<img src="images/Carbon_vs_Energy_perNodes_perStrategy.png" alt="System-partition figure">
+										<figcaption>Greener Pulverized Deployments</figcaption>
 									</figure>
 								</div>
 
@@ -578,9 +673,12 @@
 
 							<div class="summary-box reveal delay-4">
 								<h3>Impact</h3>
-								<p>This bridges the gap between <strong>simulation</strong>
+								<p>This bridges <strong>simulation</strong>
 									and <strong>real-world</strong>
-									deployments with a formally validated, function-preserving deployment model.</p>
+									deployments,
+									enabling <strong>greener deployments</strong>
+									through a formally validated model and <strong>typed language</strong>
+									for safe, adaptive collective systems.</p>
 							</div>
 						</div>
 					</div>
