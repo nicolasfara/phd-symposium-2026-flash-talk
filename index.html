@@ -597,9 +597,9 @@
   Collective[Smartphone](1.second):
     nbr(1).sum
 
-def analysis(
-  values: Signal[Int] on Cloud
-)(using Placement, Multitier) = on[Cloud]:
+def analysis(values: Signal[Int] on Cloud)(using
+    Placement, Multitier
+) = on[Cloud]:
   take(values).subscribe: it =>
     analyze(it)
 
