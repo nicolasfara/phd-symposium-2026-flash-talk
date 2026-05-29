@@ -593,7 +593,7 @@
 									<figcaption>System Model</figcaption>
 								</figure>
 								<figure class="code-figure">
-									<pre class="language-scala"><code class="language-scala">def coll(using Placement, Collective) =
+									<pre class="language-scala"><code class="language-scala">def neighborCount(using Placement, Collective) =
   Collective[Smartphone](1.second):
     nbr(1).sum
 
@@ -603,7 +603,7 @@ def analysis(
   take(values).subscribe: it =>
     analyze(it)
 
-val nbrValues = coll
+val nbrValues = neighborCount
 on[Cloud]:
   val valuesOnCloud = asLocal(nbrValues)
   analysis(valuesOnCloud)</code></pre>
